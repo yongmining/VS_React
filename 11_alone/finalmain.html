@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+   <div id="root"></div>
+   <script type="text/babel">
+
+    const form = {
+        height: 800,
+        textAlign: "center",
+        fontSize: 20
+    };
+
+    const header = {
+        width: "100%",
+        height: form.height * 0.11,
+        fontSize: form.height * 0.07,
+        background: "white"
+    };
+
+    const fixed = {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0
+    };
+
+    const menu1 = {
+        width: "20%",
+        height: form.height * 0.04,
+        float: "left",
+        background: "#DCFFA0"
+    };
+
+    const main = {
+        height: form.height * 0.82,
+        fontSize: form.fontSize * 4,
+        lineHeight: "656px"
+    };
+
+    const footer = {
+        height: form.height * 0.04,
+        background: "#FFA0A0"
+    };
+
+    function HeaderCard() {
+        return (<div style={header}>HeeMan's Page</div>);
+    }
+    function MenuCard() {
+        return (<div>
+            <div style={menu1}><a href="#main">자기소개</a></div>
+            <div style={menu1}><a href="#footer">개발자 로드맵</a></div>
+            <div style={menu1}><a href="https://www.naver.com">맛집소개</a></div>
+            <div style={menu1}><a href="https://www.naver.com">포트폴리오</a></div>
+            <div style={menu1}><a href="https://www.naver.com">로그인</a></div>
+        </div>
+        );
+    }
+    function MainCard() {
+        return (<div id="main" style={main}>Welcome To My World</div>);
+    }
+    function FooterCard() {
+        return (<div id="footer" style={footer}>HeeMan's Page</div>);
+    }
+    function UserInfo() {
+        return (
+            <div style={form}>
+                <div style={fixed}>
+                    <HeaderCard />
+                    <MenuCard />
+                </div>
+                <MainCard />
+                <MainCard />
+                <MainCard />
+                <MainCard />
+                <MainCard />
+                <MainCard />
+                <FooterCard />
+            </div>
+        );
+    }
+
+
+    ReactDOM.createRoot(document.getElementById('root')).render(< UserInfo />);
+
+</script>
+
+</body>
+</html>

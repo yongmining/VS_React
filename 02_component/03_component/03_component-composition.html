@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+   <div id="root"></div>
+   <script type="text/babel">
+        
+        const main = {
+            name: 'YongMining',
+            menu: 20,
+            phone: '010-1234-5678',
+            email: 'hong123@gmail.com'
+        };
+
+        function NameCard() {
+            
+            return <h1 style= { { color: 'whitegray', width: 800 } }>{ main.name}</h1>;
+        }
+
+        function MenuCard() {
+
+            return <h2 style= { { backgroundColor: 'orangered', width: 800 } }>{ main.menu }</h2>;
+        }
+
+        function PhoneCard() {
+            
+            return <h3 style= { { color: 'red'} }>{ main.phone }</h3>;
+        }
+
+        function EmailCard() {
+            
+            return <h3 style= { { backgroundColor: 'yellow'} }>{ main.email }</h3>;
+        }
+
+        function MainInfo() {
+
+            return (
+                <div style={ {width: 800} }>
+                    <NameCard/>
+                    <MenuCard/>
+                    <PhoneCard/>
+                    <EmailCard/>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<MainInfo/>);
+   </script>
+
+</body>
+</html>
